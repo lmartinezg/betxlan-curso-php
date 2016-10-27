@@ -1,1 +1,2 @@
-# Prácticas de cursos PHP de betxlan
+# Bextlan PHP course practices.
+
