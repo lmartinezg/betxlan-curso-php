@@ -3,6 +3,7 @@
 <head>
 <title>Validación de datos con PHP</title>
 <meta charset="utf-8" />
+
 <script>
  
 // Valida los datos del formulario
