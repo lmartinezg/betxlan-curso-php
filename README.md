@@ -1,1 +1,1 @@
-# betxlan-curso-php
+# Prácticas PHP de betxlan
