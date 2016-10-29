@@ -6,6 +6,7 @@ Esto es
 un comentario 
 multilínea
 */
+vasfasfsdafasdf
 
 // Imprimir en pantalla
 echo ("Hola, Mundo<br />");
