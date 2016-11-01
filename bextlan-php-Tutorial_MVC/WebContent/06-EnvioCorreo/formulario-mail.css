@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+
+body {
+	background-color: Pink;
+	color: White;
+}
+
+form {
+	margin: 1em auto;
+	text-align: center;
+	color: green;
+}
+
+span {
+	color: orange;
+	font-size: 1.5em;
+}
