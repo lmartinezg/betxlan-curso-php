@@ -38,5 +38,6 @@ function validarForm() {
 }
 
 window.onload = function() {
-	document.mail_frm.enviar_btn.onclick = validarForm;
+	// document.mail_frm.enviar_btn.onclick = validarForm;
+	document.getElementById("enviar_btn").onclick = validarForm;
 }
