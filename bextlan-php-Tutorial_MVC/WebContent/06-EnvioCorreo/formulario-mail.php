@@ -20,7 +20,7 @@
 			type="email" name="para_txt" /><br /> <br /> Asunto: <input
 			type="text" name="asunto_txt" /><br /> <br /> Mensaje:<br />
 		<textarea name="mensaje_txa"></textarea>
-		<br /> <br /> <input type="button" name"enviar_btn" value="Enviar" /><br />
+		<br /> <br /> <input type="button" name"enviar_btn" id="enviar_btn" value="Enviar" /><br />
 		<?php
 		error_reporting ( E_ALL ^ E_NOTICE ^ E_WARNING );
 		if (isset ( $_GET ["respuesta"] )) {
