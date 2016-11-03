@@ -1,4 +1,4 @@
-// Opción LMG Ex07 @lmartinezg
+// Opción LMG Ex07c @lmartinezg
  
 // Javascript document
 
@@ -18,7 +18,7 @@ function validarForm() {
 	var verificar = true;
 	var expRegEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
-	if (!mailFrm.value) {
+	if (!deTxt.value) {
 		alert("El campo 'De' es requerido.");
 		mailFrm.focus();
 		verificar = false;
