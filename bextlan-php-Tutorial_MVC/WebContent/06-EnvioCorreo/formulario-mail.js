@@ -9,13 +9,7 @@ var asuntoTxt;
 var mensajeTxa;
 var enviarBtn;
 
-//1.1 ASIGNACION DE VARIABLES
-mailFrm = document.getElementByID("mail-frm");
-deTxt = document.getElementByID("de-txt");
-paraTxt = document.getElementByID("para-txt");
-asuntoTxt = document.getElementByID("asunto-txt");
-mensajeTxa = document.getElementByID("mensaje-txa");
-enviarBtn = document.getElementByID("enviar-btn");
+//1.1 ASIGNACION DE VARIABLES (movido dentro de alCargarDocumento())
 
 
 
@@ -61,9 +55,16 @@ function validarForm() {
 function alCargarDocumento() {
     "use strict";
 
+    mailFrm = document.getElementById("mail-frm");
+    deTxt = document.getElementById("de-txt");
+    paraTxt = document.getElementById("para-txt");
+    asuntoTxt = document.getElementById("asunto-txt");
+    mensajeTxa = document.getElementById("mensaje-txa");
+	enviarBtn = document.getElementById("enviar-btn");
+
     enviarBtn.addEventListener("click", validarForm);
 }
 
 
 //3. ASIGNACION DE EVENTOS
-window.addEventListener("load", alCargarDocumento);
+window.addEventListener("load", alCargarDocumento, false);
