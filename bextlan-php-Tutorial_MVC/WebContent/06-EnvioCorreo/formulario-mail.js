@@ -2,6 +2,7 @@
 
 function validarForm() {
 
+	
 	var verificar = true;
 	var expRegEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
