@@ -1,44 +1,65 @@
 // Javascript document
 
+//1. DECLARACION DE OBJETOS Y VARIABLES
+var mailFrm;
+var deTxt;
+var paraTxt;
+var asuntoTxt;
+var mensajeTxa;
+var enviarBtn;
+
+// 1.1 ASIGNACION DE VARIABLES (movido dentro de alCargarDocumento())
+
+// 2. DECLARACION DE FUNCIONES
 function validarForm() {
 
-	
 	var verificar = true;
 	var expRegEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
-	if (!document.mail_frm.de_txt.value) {
+	if (!mailFrm.value) {
 		alert("El campo 'De' es requerido.");
-		document.mail_frm.de_txt.focus();
+		mailFrm.focus();
 		verificar = false;
-	} else if (!expRegEmail.exec(document.mail_frm.de_txt.value)) {
+	} else if (!expRegEmail.exec(deTxt.value)) {
 		alert("La dirección de correo 'De' no es válida.");
-		document.mail_frm.de_txt.focus();
+		deTxt.focus();
 		verificar = false;
-	} else if (!document.mail_frm.para_txt.value) {
+	} else if (!paraTxt.value) {
 		alert("El campo 'Para' es requerido.");
-		document.mail_frm.para_txt.focus();
+		paraTxt.focus();
 		verificar = false;
-	} else if (!expRegEmail.exec(document.mail_frm.para_txt.value)) {
+	} else if (!expRegEmail.exec(paraTxt.value)) {
 		alert("La dirección de correo 'Para' no es válida.");
-		document.mail_frm.para_txt.focus();
+		paraTxt.focus();
 		verificar = false;
-	} else if (!document.mail_frm.asunto_txt.value) {
+	} else if (!asuntoTxt.value) {
 		alert("El campo 'Asunto' es requerido.");
-		document.mail_frm.asunto_txt.focus();
+		asuntoTxt.focus();
 		verificar = false;
-	} else if (!document.mail_frm.mensaje_txa.value) {
+	} else if (!mensajeTxa.value) {
 		alert("El campo 'Mensaje' es requerido.");
-		document.mail_frm.mensaje_txa.focus();
+		mensajeTxa.focus();
 		verificar = false;
 	}
 
 	if (verificar) {
-		document.mail_frm.submit();
+		mailFrm.submit();
 	}
 
 }
 
-window.onload = function() {
-	// document.mail_frm.enviar_btn.onclick = validarForm;
-	document.getElementById("enviar_btn").onclick = validarForm;
+function alCargarDocumento() {
+	"use strict";
+
+	mailFrm = document.getElementById("mail-frm");
+	deTxt = document.getElementById("de-txt");
+	paraTxt = document.getElementById("para-txt");
+	asuntoTxt = document.getElementById("asunto-txt");
+	mensajeTxa = document.getElementById("mensaje-txa");
+	enviarBtn = document.getElementById("enviar-btn");
+
+	enviarBtn.addEventListener("click", validarForm);
 }
+
+// 3. ASIGNACION DE EVENTOS
+window.addEventListener("load", alCargarDocumento, false);
