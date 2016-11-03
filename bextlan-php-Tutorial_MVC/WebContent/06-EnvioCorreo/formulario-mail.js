@@ -1,5 +1,5 @@
 // Opción LMG Ex07 @lmartinezg
-
+ 
 // Javascript document
 
 //1. DECLARACION DE OBJETOS Y VARIABLES
