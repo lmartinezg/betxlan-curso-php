@@ -8,6 +8,7 @@ $cabeceras = "MIME-Version: 1-0\r\n";
 $cabeceras .= "Content-Type: text/html; charset=iso-8859-1\r\n";
 $cabeceras .= "From: $de \r\n";
 
+// Falla porque requiere un servidor SMTP instalado en el propio host
 if (mail ( $para, $asunto, $mensaje, $cabeceras )) {
 	$respuesta = "El mensaje ha sido enviado.";
 } else {
