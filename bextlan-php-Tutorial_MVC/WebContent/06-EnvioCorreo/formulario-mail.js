@@ -1,69 +1,68 @@
-// Opción 1 @luispuchades
+// Opción LMG Ex07 @lmartinezg
 
-//DECLARACION DE OBJETOS Y VARIABLES
-var mailFrm = document.querySelector("#mail-frm");
-var deTxt = document.querySelector("#de-txt");
-var paraTxt = document.querySelector("#para-txt");
-var asuntoTxt = document.querySelector("#asunto-txt");
-var mensajeTxa = document.querySelector("#mensaje-txa");
-var enviarBtn = document.querySelector("#enviar-btn");
+// Javascript document
 
+//1. DECLARACION DE OBJETOS Y VARIABLES
+var mailFrm;
+var deTxt;
+var paraTxt;
+var asuntoTxt;
+var mensajeTxa;
+var enviarBtn;
 
+// 1.1 ASIGNACION DE VARIABLES (movido dentro de alCargarDocumento())
 
-//DECLARACION DE FUNCIONES
-function validarForm()
-{
-    var verificar = true;
-    var expRegMail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+// 2. DECLARACION DE FUNCIONES
+function validarForm() {
 
-    if(!deTxt.value)
-    {
-        alert("Por favor, indique el correo electrónico del remitente");
-        deTxt.focus();
-        verificar = false;
-    }
-    else if (!expRegMail.exec(deTxt.value))
-    {
-        alert("El remitente no tiene el formato adecuado");
-        deTxt.focus();
-        verificar = false;
-    }
-    else if(!paraTxt.value)
-    {
-        alert("Por favor, indique el correo electrónico del destinatario");
-        paraTxt.focus();
-        verificar = false;
-    }
-    else if (!expRegMail.exec(paraTxt.value))
-    {
-        alert("El destinatario no tiene el formato adecuado");
-        paraTxt.focus();
-        verificar = false;
-    }
-    else if(!asuntoTxt.value)
-    {
-        alert("Por favor, debe introducir un asunto");
-        asuntoTxt.focus();
-        verificar = false;
-    }
-    else if(!mensajeTxa.value)
-    {
-        alert("Por favor, debe introducir un mensaje");
-        mensajeTxa.focus();
-        verificar = false;
-    }
-    if (verificar)
-    {
-        mailFrm.submit();
-    }
+	var verificar = true;
+	var expRegEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+	if (!mailFrm.value) {
+		alert("El campo 'De' es requerido.");
+		mailFrm.focus();
+		verificar = false;
+	} else if (!expRegEmail.exec(deTxt.value)) {
+		alert("La dirección de correo 'De' no es válida.");
+		deTxt.focus();
+		verificar = false;
+	} else if (!paraTxt.value) {
+		alert("El campo 'Para' es requerido.");
+		paraTxt.focus();
+		verificar = false;
+	} else if (!expRegEmail.exec(paraTxt.value)) {
+		alert("La dirección de correo 'Para' no es válida.");
+		paraTxt.focus();
+		verificar = false;
+	} else if (!asuntoTxt.value) {
+		alert("El campo 'Asunto' es requerido.");
+		asuntoTxt.focus();
+		verificar = false;
+	} else if (!mensajeTxa.value) {
+		alert("El campo 'Mensaje' es requerido.");
+		mensajeTxa.focus();
+		verificar = false;
+	}
+
+	if (verificar) {
+		mailFrm.submit();
+	}
 
 }
 
-function alCargarDocumento()
-{
-    enviarBtn.addEventListener("click", validarForm);
+function alCargarDocumento() {
+	"use strict";
+
+	mailFrm = document.getElementById("mail-frm");
+	deTxt = document.getElementById("de-txt");
+	paraTxt = document.getElementById("para-txt");
+	asuntoTxt = document.getElementById("asunto-txt");
+	mensajeTxa = document.getElementById("mensaje-txa");
+	enviarBtn = document.getElementById("enviar-btn");
+
+	enviarBtn.addEventListener("click", validarForm);
 }
 
+// 3. ASIGNACION DE EVENTOS
+window.addEventListener("load", alCargarDocumento, false);
 
-//ASIGNACION DE EVENTOS
-window.addEventListener("load", alCargarDocumento);
