@@ -1,5 +1,5 @@
 <?php
-echo "File attributes<br />";
+echo "File attributes:<br />";
 echo "<table border='1'><tr><th>Property</th><th>Value</th>";
 foreach ( $_FILES ["archivo_fls"] as $key => $value ) {
 	echo "<tr><td>$key</td><td>$value</td>";
@@ -17,7 +17,7 @@ echo "<hr>";
 echo "<table border='1'><tr><th>Key</th><th>Value</th>";
 foreach ($_POST as $key => $value){
 	if ($key=="gmailPassword_txt") {
-		echo "<tr><td>$key</td><td>&nbsp</td>";
+		echo "<tr><td>$key</td><td>**************</td>";
 	} else {
 		echo "<tr><td>$key</td><td>$value</td>";
 		}
@@ -51,9 +51,9 @@ if (move_uploaded_file ( $archivo, $destino )) {
 	$mail = new PHPMailer ();
 	$mail->IsSMTP (); // Utilizar SMTP
 	$mail->SMTPAuth = true; // Autenticación en el SMTP
-	$mail->SMTPSecure = "ssl"; // Utilizar SSL
+	$mail->SMTPSecure = "tls"; // Utilizar TLS
 	$mail->Host = "smtp.gmail.com"; // Servidor SMTP
-	$mail->Port = 465; // Puerto SMTP seguro
+	$mail->Port = 587; // Puerto SMTP seguro
 	$mail->From = $de; // Remitente
 	$mail->AddAddress ( $para ); // Destinatarios separados por comas
 	$mail->Username = $gmailUserId; // ID usuario GMail
@@ -68,11 +68,11 @@ if (move_uploaded_file ( $archivo, $destino )) {
 		$respuesta = "El mensajes fue enviado con phpmailer.";
 	} else {
 		$respuesta = "Falló el envío con phpmailer.";
-		$respuesta . " Error: " . $mail->ErrorInfo;
+		$respuesta .= " Error: " . $mail->ErrorInfo;
 	}
 } else {
 	$respuesta = "Ocurrió un error al subir el archivo adjunto.";
 }
 unlink ( $destino ); // Borrar un archivo en el servidor
-//header ( "Location: formulario-phpmailer.php?respuesta=$respuesta" );
+header ( "Location: formulario-phpmailer.php?respuesta=$respuesta" );
 ?>
