@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+
+body {
+	background-color: Azure;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+th, td {
+	padding: 1px 5px;
+}
+
+th {
+	text-align: center;
+}
+
+td:first-child {
+	text-align: right;
+}
