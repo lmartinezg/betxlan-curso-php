@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <title>Operaciones básicas en Base de Datos MySQL</title>
 
-<link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="css/estilos.css">
 <!-- <script src="formulario-phpmailer.js"></script> -->
 
 </head>

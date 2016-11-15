@@ -1,0 +1,67 @@
+@CHARSET "UTF-8";
+
+* {
+	border: 1px solid black;
+	margin: 0;
+}
+
+@font-face {
+	font-family: "Chalet";
+	src: url("../fonts/Chalet.eot");
+	src: url("../fonts/Chalet.eof?#iefix") format("embedded-opentype"),
+ 		url("../fonts/Chalet.woff") format("embedded-woff"),
+		url("../fonts/Chalet.ttf") format("truetype"),
+		url("../fonts/Chalet.svg#Chalet") format("svg");
+}
+
+a {
+	color: #F60; // orange;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #7BBFD5;
+}
+
+body {
+	background: white;
+	color: #212121;
+	font-family: "Chalet", Helvetica, Verdana;
+	font-size: 16px;
+}
+
+nav, #principal {
+	-ms-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display: inline-block;
+	font-size: 1em;
+	margin: .25em;
+	text-align: left;
+	width: 20%;
+	vertical-align: top;
+}
+
+ul {
+	List-style: none;
+}
+
+#contenido {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#principal {
+	width: 75%;
+	background: red;
+}
+
+.cambio {
+	-ms-transition: all 2.5s ease-out;
+	-moz-transition: all 2.5s ease-out;
+	-o-transition: all 2.5s ease-out;
+	-webkit-transition: all 2.5s ease-out;
+	transition: all 2.5s ease-out;
+}
