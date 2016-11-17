@@ -37,7 +37,13 @@ switch ($op) {
 <meta charset="utf-8" />
 <title><?php echo $titulo ?></title>
 <link rel="stylesheet" href="css/mis-contactos.css" />
-<!-- <script src="js/mis-contactos.js" /> -->
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+	</script>
+<script>
+			!window.jQuery && document.write("<script src='js/jquery.min.js'><\/script>");
+	</script>
+<script src="js/mis-contactos.js"></script>
 </head>
 <body>
 
@@ -51,10 +57,9 @@ switch ($op) {
 				<li><a class="cambio" href="?op=consultas">Consultas de contacto</a></li>
 			</ul>
 		</nav>
-	</section>
-
-	<section id="principal">
-		<?php include ($contenido); ?>
+		<section id="principal">
+			<?php include ($contenido); ?>
+		</section>
 	</section>
 </body>
 </html>

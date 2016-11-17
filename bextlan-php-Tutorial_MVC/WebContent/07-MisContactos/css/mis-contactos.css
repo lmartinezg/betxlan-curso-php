@@ -1,7 +1,6 @@
 @CHARSET "UTF-8";
 
 * {
-	border: 1px solid black;
 	margin: 0;
 }
 
@@ -9,7 +8,7 @@
 	font-family: "Chalet";
 	src: url("../fonts/Chalet.eot");
 	src: url("../fonts/Chalet.eof?#iefix") format("embedded-opentype"),
- 		url("../fonts/Chalet.woff") format("embedded-woff"),
+		url("../fonts/Chalet.woff") format("embedded-woff"),
 		url("../fonts/Chalet.ttf") format("truetype"),
 		url("../fonts/Chalet.svg#Chalet") format("svg");
 }
@@ -28,6 +27,10 @@ body {
 	color: #212121;
 	font-family: "Chalet", Helvetica, Verdana;
 	font-size: 16px;
+}
+
+form {
+	display: none;
 }
 
 nav, #principal {
@@ -55,7 +58,6 @@ ul {
 
 #principal {
 	width: 75%;
-	background: red;
 }
 
 .cambio {
