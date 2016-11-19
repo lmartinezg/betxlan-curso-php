@@ -12,12 +12,11 @@
 				title="Tu email" required />
 		</div>
 		<div>
-			<labelfor"nombre">Nombre: </label> 
-		<input type="text" id="nombre"
-			name="nombre_txt" class="cambio" placeholder="Escribe tu nombre"
-			title="Tu nombre" required />
-	
-	</div>
+			<labelfor"nombre">Nombre: </label> <input type="text" id="nombre"
+				name="nombre_txt" class="cambio" placeholder="Escribe tu nombre"
+				title="Tu nombre" required />
+		
+		</div>
 		<div>
 			<label for="m">Sexo: </label> <input type="radio" id="m"
 				name="sexo_rdo" title="Tu sexo" value="M" required />&nbsp; <label

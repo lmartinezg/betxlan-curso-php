@@ -15,7 +15,7 @@ function conectarse() {
 		printf ( "Error cargando el conjunto de caracteres utf8: %s\n", $conectar->error );
 		exit ();
 	} else {
-		printf ( "Conjunto de caracteres actual: %s\n", $conectar->character_set_name );
+		printf ( "Conjunto de caracteres actual: %s\n", $conectar->character_set_name () );
 	}
 	
 	return $conectar;
