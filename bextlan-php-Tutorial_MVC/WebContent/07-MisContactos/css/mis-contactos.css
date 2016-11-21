@@ -67,7 +67,7 @@ input[type="file"] {
 	cursor: pointer;
 	opacity: 0;
 	filter: alpha(opacity = 0);
-	width: 150px;
+	width: 50px;
 }
 
 input[type="submit"] {
@@ -118,7 +118,7 @@ ul {
 }
 
 .adjuntar-archivo {
-	background: #EEE url(../img/boton-buscar.png) no-repeat 100% -3px;
+	background: #EEE url(../img/boton-buscar.png) no-repeat 100% -1px;
 	border: thin solid #F60;
 	display: inline;
 	height: 290px;
@@ -131,9 +131,18 @@ ul {
 }
 
 .cambio {
-	-ms-transition: all 2.5s ease-out;
-	-moz-transition: all 2.5s ease-out;
-	-o-transition: all 2.5s ease-out;
-	-webkit-transition: all 2.5s ease-out;
-	transition: all 2.5s ease-out;
+	-ms-transition: all 1.5s ease-out;
+	-moz-transition: all 1.5s ease-out;
+	-o-transition: all 1.5s ease-out;
+	-webkit-transition: all 1.5s ease-out;
+	transition: all 1.5s ease-out;
+}
+
+.mensajes {
+	background: yellow;
+	border-radius: 5px;
+	color: #000;
+	font-family: Helvetica, Verdana;
+	font-size: 1em;
+	padding: 0.5em;
 }

@@ -12,5 +12,3 @@ if ($ejecutar_consulta->num_rows > 0) {
 	}
 }
 ?>
-
-		

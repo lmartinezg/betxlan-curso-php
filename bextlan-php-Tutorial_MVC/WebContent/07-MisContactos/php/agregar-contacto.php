@@ -1,10 +1,11 @@
 <?php
-echo "Debug: Inicio" . "<br />";
-echo "\$_POST: <br />";
-foreach ( $_POST as $key => $value ) {
-	echo $key . " ==> " . $value . "<br />";
-}
-echo "Debug: Fin" . "<br /><br />" . 
+
+// echo "Debug: Inicio" . "<br />";
+// echo "\$_POST: <br />";
+// foreach ( $_POST as $key => $value ) {
+// echo $key . " ==> " . $value . "<br />";
+// }
+// echo "Debug: Fin" . "<br /><br />" .
 
 // Asignar a variables PHP los valores del formulario
 $email = $_POST ["email_txt"];
@@ -16,9 +17,9 @@ $pais = $_POST ["pais_slc"];
 
 // die();
 
-echo "Debug: Inicio" . "<br />";
-echo "email=" . $email . "<br />";
-echo "Degug: Fin" . "<br /><br />" . 
+// echo "Debug: Inicio" . "<br />";
+// echo "email=" . $email . "<br />";
+// echo "Degug: Fin" . "<br /><br />" .
 
 // Dependiendo del sexo asignamos una imagen genérica u otra
 $imagen_generica = ($sexo == "M") ? "amigo.png" : "amiga.png";
@@ -35,6 +36,14 @@ if ($num_regs == 0) {
 	$archivo = $_FILES ["foto_fls"] ["tmp_name"]; // Donde se ha guardado temporalmente el archivo
 	$se_subio_imagen = subir_imagen ( $tipo, $archivo, $email );
 	$imagen = empty ( $archivo ) ? $imagen_generica : $se_subio_imagen;
+	
+// 	echo "<br /><br />" . "Debug: Inicio" . "<br />";
+// 	echo "\$tipo: " . $tipo . "<br />";
+// 	echo "\$archivo: " . $archivo . "<br />";
+// 	echo "\$se_subio_imagen: " . $se_subio_imagen . "<br />";
+// 	echo "\$imagen: " . $imagen . "<br />";
+// 	echo "Debug: Fin" . "<br /><br />";
+// 	die ();
 	
 	$consulta = "INSERT INTO contactos(email, nombre, sexo, nacimiento, telefono, pais, imagen) VALUES('$email', '$nombre', '$sexo', '$nacimiento', '$telefono', '$pais', '$imagen')";
 	$ejecutar_consulta = $conexion->query ( $consulta );

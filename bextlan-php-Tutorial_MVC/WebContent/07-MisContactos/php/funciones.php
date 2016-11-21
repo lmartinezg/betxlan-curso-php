@@ -31,25 +31,25 @@ function subir_imagen($tipo, $imagen, $email) {
 			$extension = ".png";
 			
 			// El tamaño correcto para la maquetación es de 420px
-		$tam_img = getimagesize ( $imagen );
-		$ancho_imagen = $tam_img [0];
-		$alto_imagen = $tam_img [1];
+		$tam_imagen = getimagesize ( $imagen );
+		$ancho_imagen = $tam_imagen [0];
+		$alto_imagen = $tam_imagen [1];
 		$ancho_imagen_deseado = 420;
 		
 		// Ruta y nombre del archivo donde se guardará la imagen en el servidor
-		$ruta_nombre_img = "../img/fotos/" . $email;
-		$destino = $ruta_nombre_img . $extension;
-		$nombre_img_ext_BD = $email . $extension;
+		$ruta_nombre_imagen = "../img/fotos/" . $email;
+		$destino = $ruta_nombre_imagen . $extension;
+		$nombre_imagen_extension_BD = $email . $extension;
 		
 		if ($ancho_imagen > $ancho_imagen_deseado) {
 			// Reajustar tamaño imagen si es mayor que el establecido
 			
 			// Calcular nuevo alto proporcionalmente
-			$nuevo_ancho_img = $ancho_imagen_deseado;
-			$nuevo_alto_img = $alto_imagen / $ancho_imagen * $nuevo_ancho_img;
+			$nuevo_ancho_imagen = $ancho_imagen_deseado;
+			$nuevo_alto_imagen = $alto_imagen / $ancho_imagen * $nuevo_ancho_imagen;
 			
 			// Crear nueva imagen (vacía) con el nuevo tamaño
-			$imagen_reajustada = imagecreatetruecolor ( $nuevo_ancho_img, $nuevo_alto_img );
+			$imagen_reajustada = imagecreatetruecolor ( $nuevo_ancho_imagen, $nuevo_alto_imagen );
 			
 			// imagecreatefromjpeg — Crea una nueva imagen a partir de un fichero o de una URL
 			// resource imagecreatefromjpeg ( string $filename )
@@ -78,34 +78,34 @@ function subir_imagen($tipo, $imagen, $email) {
 			switch ($extension) {
 				
 				case ".jpg" :
-					$img_original = imagecreatefromjpeg ( $imagen );
-					imagecopyresampled ( $imagen_reajustada, $img_original, 0, 0, 0, 0, $nuevo_ancho_img, $nuevo_alto_img, $ancho_imagen, $alto_imagen );
-					imagejpeg ( $img_reajustada, $destino, 100 );
-					borrar_imagenes ( $ruta_nombre_img, $extension );
+					$imagen_original = imagecreatefromjpeg ( $imagen );
+					imagecopyresampled ( $imagen_reajustada, $imagen_original, 0, 0, 0, 0, $nuevo_ancho_imagen, $nuevo_alto_imagen, $ancho_imagen, $alto_imagen );
+					imagejpeg ( $imagen_reajustada, $destino, 100 );
+					borrar_imagenes ( $ruta_nombre_imagen, $extension );
 					break;
 				
 				case ".gif" :
-					$img_original = imagecreatefromgif ( $imagen );
-					imagecopyresampled ( $imagen_reajustada, $img_original, 0, 0, 0, 0, $nuevo_ancho_img, $nuevo_alto_img, $ancho_imagen, $alto_imagen );
-					imagegif ( $img_reajustada, $destino );
-					borrar_imagenes ( $ruta_nombre_img, $extension );
+					$imagen_original = imagecreatefromgif ( $imagen );
+					imagecopyresampled ( $imagen_reajustada, $imagen_original, 0, 0, 0, 0, $nuevo_ancho_imagen, $nuevo_alto_imagen, $ancho_imagen, $alto_imagen );
+					imagegif ( $imagen_reajustada, $destino );
+					borrar_imagenes ( $ruta_nombre_imagen, $extension );
 					break;
 				
 				case ".png" :
-					$img_original = imagecreatefrompng ( $imagen );
-					imagecopyresampled ( $imagen_reajustada, $img_original, 0, 0, 0, 0, $nuevo_ancho_img, $nuevo_alto_img, $ancho_imagen, $alto_imagen );
-					imagepng ( $img_reajustada, $destino );
-					borrar_imagenes ( $ruta_nombre_img, $extension );
+					$imagen_original = imagecreatefrompng ( $imagen );
+					imagecopyresampled ( $imagen_reajustada, $imagen_original, 0, 0, 0, 0, $nuevo_ancho_imagen, $nuevo_alto_imagen, $ancho_imagen, $alto_imagen );
+					imagepng ( $imagen_reajustada, $destino );
+					borrar_imagenes ( $ruta_nombre_imagen, $extension );
 					break;
 			}
 		} else {
 			// No hace falta reajustar la imagen. Subirla directamente
 			move_uploaded_file ( $imagen, $destino ) or die ( "No se pudo subir la imagen al servidor." );
 			// Borra posibles imágenes anteriores
-			borrar_imagenes ( $ruta_nombre_img, $extension );
+			borrar_imagenes ( $ruta_nombre_imagen, $extension );
 		}
 		// Nombre que tendrá la imagen en la base de datos
-		return $nombre_img_ext_BD;
+		return $nombre_imagen_extension_BD;
 	} else {
 		return false;
 	}
