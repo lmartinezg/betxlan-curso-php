@@ -26,6 +26,8 @@ $imagen_generica = ($sexo == "M") ? "amigo.png" : "amiga.png";
 
 // Comprobamos que el email introducido es nuevo en la BBDD
 include ("conexion.php");
+$conexion = conectarse ();
+
 $consulta = "SELECT * FROM contactos WHERE email='$email'";
 $ejecutar_consulta = $conexion->query ( $consulta );
 $num_regs = $ejecutar_consulta->num_rows;

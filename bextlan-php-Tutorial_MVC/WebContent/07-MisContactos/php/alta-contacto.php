@@ -12,7 +12,7 @@
 				title="Tu email" required />
 		</div>
 		<div>
-			<labelfor"nombre">Nombre: </label> <input type="text" id="nombre"
+			<label for"nombre">Nombre: </label> <input type="text" id="nombre"
 				name="nombre_txt" class="cambio" placeholder="Escribe tu nombre"
 				title="Tu nombre" required />
 		
