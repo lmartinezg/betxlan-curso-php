@@ -109,6 +109,40 @@ nav, #principal {
 	vertical-align: top;
 }
 
+table {
+	border: .1em solid #F60;
+	border-radius: 1em;
+	cursor: default;
+	font-family: Helvetica, Verdana;
+	font-size: .75em;
+	padding: .25em;
+	width: 100%;
+}
+
+table img {
+	max-width: 25%
+}
+
+table td {
+	border: .1em solid #212121;
+	border-radius: .5em;
+	word-wrap: break-word;
+	text-align: center; 
+} 
+
+table tr {
+	background: powderblue;
+}
+
+table thead tr {
+	background: transparent;
+	text-align: center; 
+}
+
+table tr:nth-child(even){
+	background: darksalmon;
+}
+
 ul {
 	List-style: none;
 }

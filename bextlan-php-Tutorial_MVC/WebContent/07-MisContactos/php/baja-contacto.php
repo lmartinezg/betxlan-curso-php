@@ -1,4 +1,4 @@
-																							<form id="baja-contacto" name="baja_frm"
+<form id="baja-contacto" name="baja_frm"
 	action="php/eliminar-contacto.php" method="post"
 	enctype="application/x-www-form-urlencoded">
 
